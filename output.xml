@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.2 on win32)" generated="20220621 09:43:44.551" rpa="false" schemaversion="3">
+<suite id="s1" name="testLogin" source="C:\Junior\QA\TestLoginUsingRobot\testLogin.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${base_url}</arg>
+<arg>${browser_type}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220621 09:43:44.800" level="INFO">Opening browser 'chrome' to base url 'https://pub-eish-dev.keponet.com/frontend/login'.</msg>
+<status status="PASS" starttime="20220621 09:43:44.800" endtime="20220621 09:43:49.339"/>
+</kw>
+<test id="s1-t1" name="Maximize Browser" line="15">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220621 09:43:49.347" endtime="20220621 09:43:49.477"/>
+</kw>
+<status status="PASS" starttime="20220621 09:43:49.339" endtime="20220621 09:43:49.478"/>
+</test>
+<test id="s1-t2" name="Login with valid user" line="18">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:43:49.482" level="INFO">Typing text 'jenareishsatu@yopmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220621 09:43:49.481" endtime="20220621 09:43:49.626"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:43:49.666" level="INFO">Content of text field '//input[@id="email"]' is 'jenareishsatu@yopmail.com'.</msg>
+<status status="PASS" starttime="20220621 09:43:49.626" endtime="20220621 09:43:49.666"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:43:50.675" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:43:49.666" endtime="20220621 09:43:50.675"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${password_user}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:43:50.675" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg timestamp="20220621 09:43:50.733" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220621 09:43:50.785" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220621 09:43:50.675" endtime="20220621 09:43:50.785"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${password_user}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:43:50.819" level="INFO">Content of text field '//input[@id="password"]' is '12345678'.</msg>
+<status status="PASS" starttime="20220621 09:43:50.785" endtime="20220621 09:43:50.819"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:43:51.832" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:43:50.819" endtime="20220621 09:43:51.832"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:43:51.832" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220621 09:43:51.832" endtime="20220621 09:43:52.690"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:43:53.703" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:43:52.690" endtime="20220621 09:43:53.703"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//a[@id="account-button"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:43:53.713" level="INFO">Element '//a[@id="account-button"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:43:53.703" endtime="20220621 09:43:53.713"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:43:55.720" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:43:53.713" endtime="20220621 09:43:55.720"/>
+</kw>
+<status status="PASS" starttime="20220621 09:43:49.480" endtime="20220621 09:43:55.720"/>
+</test>
+<test id="s1-t3" name="Logout account" line="30">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@id="account-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:43:55.722" level="INFO">Clicking element '//a[@id="account-button"]'.</msg>
+<status status="PASS" starttime="20220621 09:43:55.722" endtime="20220621 09:43:55.775"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//li[@class="has-icon icon-logout"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:43:55.799" level="INFO">Element '//li[@class="has-icon icon-logout"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:43:55.775" endtime="20220621 09:43:55.799"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:43:57.802" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:43:55.799" endtime="20220621 09:43:57.802"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//li[@class="has-icon icon-logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:43:57.802" level="INFO">Clicking element '//li[@class="has-icon icon-logout"]'.</msg>
+<status status="PASS" starttime="20220621 09:43:57.802" endtime="20220621 09:43:58.594"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:00.607" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:43:58.602" endtime="20220621 09:44:00.607"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@id="login-box"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:00.648" level="INFO">Element '//div[@id="login-box"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:00.608" endtime="20220621 09:44:00.648"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:02.656" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:00.648" endtime="20220621 09:44:02.657"/>
+</kw>
+<status status="PASS" starttime="20220621 09:43:55.722" endtime="20220621 09:44:02.657"/>
+</test>
+<test id="s1-t4" name="Login with invalid email" line="39">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${invalid_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:02.657" level="INFO">Typing text 'cobaaja@gmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:02.657" endtime="20220621 09:44:02.749"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${invalid_email}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:02.781" level="INFO">Content of text field '//input[@id="email"]' is 'cobaaja@gmail.com'.</msg>
+<status status="PASS" starttime="20220621 09:44:02.749" endtime="20220621 09:44:02.781"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:03.794" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:02.781" endtime="20220621 09:44:03.794"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${password_user}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:03.797" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg timestamp="20220621 09:44:03.849" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220621 09:44:03.895" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220621 09:44:03.794" endtime="20220621 09:44:03.895"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${password_user}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:03.927" level="INFO">Content of text field '//input[@id="password"]' is '12345678'.</msg>
+<status status="PASS" starttime="20220621 09:44:03.895" endtime="20220621 09:44:03.927"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:04.935" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:03.935" endtime="20220621 09:44:04.935"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:04.935" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:04.935" endtime="20220621 09:44:05.509"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:06.532" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:05.509" endtime="20220621 09:44:06.533"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//input[@class="form-control is-invalid"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:06.581" level="INFO">Element '//input[@class="form-control is-invalid"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:06.533" endtime="20220621 09:44:06.581"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:08.587" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:06.581" endtime="20220621 09:44:08.588"/>
+</kw>
+<status status="PASS" starttime="20220621 09:44:02.657" endtime="20220621 09:44:08.588"/>
+</test>
+<test id="s1-t5" name="Login with invalid password" line="51">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20220621 09:44:08.596" endtime="20220621 09:44:08.782"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:10.785" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:08.782" endtime="20220621 09:44:10.785"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:10.785" level="INFO">Typing text 'jenareishsatu@yopmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:10.785" endtime="20220621 09:44:10.917"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:10.949" level="INFO">Content of text field '//input[@id="email"]' is 'jenareishsatu@yopmail.com'.</msg>
+<status status="PASS" starttime="20220621 09:44:10.917" endtime="20220621 09:44:10.949"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:11.953" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:10.949" endtime="20220621 09:44:11.953"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${invalid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:11.953" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg timestamp="20220621 09:44:12.001" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220621 09:44:12.049" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220621 09:44:11.953" endtime="20220621 09:44:12.049"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>${invalid_password}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:12.081" level="INFO">Content of text field '//input[@id="password"]' is '87654321'.</msg>
+<status status="PASS" starttime="20220621 09:44:12.049" endtime="20220621 09:44:12.089"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:13.096" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:12.089" endtime="20220621 09:44:13.096"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:13.096" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:13.096" endtime="20220621 09:44:13.490"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:14.512" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:13.498" endtime="20220621 09:44:14.513"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@class="alert alert-danger text-danger"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:14.562" level="INFO">Element '//div[@class="alert alert-danger text-danger"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:14.513" endtime="20220621 09:44:14.562"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:16.577" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:14.562" endtime="20220621 09:44:16.577"/>
+</kw>
+<status status="PASS" starttime="20220621 09:44:08.588" endtime="20220621 09:44:16.577"/>
+</test>
+<test id="s1-t6" name="Login with all empty" line="65">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20220621 09:44:16.579" endtime="20220621 09:44:16.797"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:18.799" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:16.797" endtime="20220621 09:44:18.799"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:18.799" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:18.799" endtime="20220621 09:44:18.870"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:19.871" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:18.870" endtime="20220621 09:44:19.871"/>
+</kw>
+<kw name="Element Should Be Focused" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<doc>Verifies that element identified by ``locator`` is focused.</doc>
+<status status="PASS" starttime="20220621 09:44:19.871" endtime="20220621 09:44:19.904"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:21.914" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:19.906" endtime="20220621 09:44:21.914"/>
+</kw>
+<status status="PASS" starttime="20220621 09:44:16.579" endtime="20220621 09:44:21.914"/>
+</test>
+<test id="s1-t7" name="Login with password empty" line="73">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20220621 09:44:21.929" endtime="20220621 09:44:22.299"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:24.310" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:22.307" endtime="20220621 09:44:24.310"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:24.310" level="INFO">Typing text 'jenareishsatu@yopmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:24.310" endtime="20220621 09:44:24.432"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${email_user}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:24.472" level="INFO">Content of text field '//input[@id="email"]' is 'jenareishsatu@yopmail.com'.</msg>
+<status status="PASS" starttime="20220621 09:44:24.432" endtime="20220621 09:44:24.472"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:25.478" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:24.472" endtime="20220621 09:44:25.478"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:25.510" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:25.494" endtime="20220621 09:44:25.550"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:26.557" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:25.550" endtime="20220621 09:44:26.557"/>
+</kw>
+<kw name="Element Should Be Focused" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<doc>Verifies that element identified by ``locator`` is focused.</doc>
+<status status="PASS" starttime="20220621 09:44:26.557" endtime="20220621 09:44:26.581"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:28.581" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:26.581" endtime="20220621 09:44:28.581"/>
+</kw>
+<status status="PASS" starttime="20220621 09:44:21.921" endtime="20220621 09:44:28.581"/>
+</test>
+<test id="s1-t8" name="Form forget password" line="84">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20220621 09:44:28.589" endtime="20220621 09:44:29.337"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:31.340" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:29.337" endtime="20220621 09:44:31.340"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@href="https://pub-eish-dev.keponet.com/frontend/recover-password"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:31.343" level="INFO">Clicking element '//a[@href="https://pub-eish-dev.keponet.com/frontend/recover-password"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:31.340" endtime="20220621 09:44:31.699"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@id="register-content"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:31.742" level="INFO">Element '//div[@id="register-content"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:31.699" endtime="20220621 09:44:31.742"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:32.748" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:31.742" endtime="20220621 09:44:32.748"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${invalid_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:32.752" level="INFO">Typing text 'cobaaja@gmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:32.748" endtime="20220621 09:44:32.864"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>${invalid_email}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:32.904" level="INFO">Content of text field '//input[@id="email"]' is 'cobaaja@gmail.com'.</msg>
+<status status="PASS" starttime="20220621 09:44:32.872" endtime="20220621 09:44:32.904"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:33.927" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:32.904" endtime="20220621 09:44:33.927"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:33.927" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:33.927" endtime="20220621 09:44:34.789"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:35.797" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:34.789" endtime="20220621 09:44:35.797"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//span[@class="invalid-feedback"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:35.819" level="INFO">Element '//span[@class="invalid-feedback"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:35.797" endtime="20220621 09:44:35.819"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:37.827" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:35.819" endtime="20220621 09:44:37.827"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220621 09:44:37.829" level="INFO">Opening url 'https://pub-eish-dev.keponet.com/frontend/login'</msg>
+<status status="PASS" starttime="20220621 09:44:37.829" endtime="20220621 09:44:38.336"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@id="login-box"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:38.368" level="INFO">Element '//div[@id="login-box"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:38.336" endtime="20220621 09:44:38.368"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:40.376" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:38.368" endtime="20220621 09:44:40.376"/>
+</kw>
+<status status="PASS" starttime="20220621 09:44:28.589" endtime="20220621 09:44:40.376"/>
+</test>
+<test id="s1-t9" name="Register new user" line="102">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@href="https://pub-eish-dev.keponet.com/frontend/register"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:40.384" level="INFO">Clicking element '//a[@href="https://pub-eish-dev.keponet.com/frontend/register"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:40.384" endtime="20220621 09:44:41.127"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@id="register-content"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:41.151" level="INFO">Element '//div[@id="register-content"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:41.127" endtime="20220621 09:44:41.151"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:43.152" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:41.151" endtime="20220621 09:44:43.152"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>//select[@id="tu_id"]</arg>
+<arg>Badan Hukum</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220621 09:44:43.152" level="INFO">Selecting options from selection list '//select[@id="tu_id"]' by label Badan Hukum.</msg>
+<status status="PASS" starttime="20220621 09:44:43.152" endtime="20220621 09:44:43.235"/>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<arg>//select[@id="tu_id"]</arg>
+<arg>Badan Hukum</arg>
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<msg timestamp="20220621 09:44:43.235" level="INFO">Verifying list '//select[@id="tu_id"]' has option [ Badan Hukum ] selected.</msg>
+<msg timestamp="20220621 09:44:43.251" level="INFO">Current page contains list '//select[@id="tu_id"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:43.235" endtime="20220621 09:44:43.347"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:44.367" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:43.347" endtime="20220621 09:44:44.367"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="nik"]</arg>
+<arg>10101010101010</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:44.370" level="INFO">Typing text '10101010101010' into text field '//input[@id="nik"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:44.367" endtime="20220621 09:44:44.492"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="nik"]</arg>
+<arg>10101010101010</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:44.524" level="INFO">Content of text field '//input[@id="nik"]' is '10101010101010'.</msg>
+<status status="PASS" starttime="20220621 09:44:44.492" endtime="20220621 09:44:44.524"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:45.528" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:44.524" endtime="20220621 09:44:45.528"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="nama"]</arg>
+<arg>Andi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:45.528" level="INFO">Typing text 'Andi' into text field '//input[@id="nama"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:45.528" endtime="20220621 09:44:45.627"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="nama"]</arg>
+<arg>Andi</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:45.665" level="INFO">Content of text field '//input[@id="nama"]' is 'Andi'.</msg>
+<status status="PASS" starttime="20220621 09:44:45.627" endtime="20220621 09:44:45.665"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:46.673" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:45.666" endtime="20220621 09:44:46.673"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@id="tanggal_lahir"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:46.673" level="INFO">Clicking element '//input[@id="tanggal_lahir"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:46.673" endtime="20220621 09:44:46.759"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@class="datepicker-days"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220621 09:44:46.791" level="INFO">Element '//div[@class="datepicker-days"]' is displayed.</msg>
+<status status="PASS" starttime="20220621 09:44:46.759" endtime="20220621 09:44:46.791"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:47.795" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:46.791" endtime="20220621 09:44:47.795"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="tanggal_lahir"]</arg>
+<arg>16/06/2001</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:47.795" level="INFO">Typing text '16/06/2001' into text field '//input[@id="tanggal_lahir"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:47.795" endtime="20220621 09:44:47.888"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="tanggal_lahir"]</arg>
+<arg>16/06/2001</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:47.920" level="INFO">Content of text field '//input[@id="tanggal_lahir"]' is '16/06/2001'.</msg>
+<status status="PASS" starttime="20220621 09:44:47.888" endtime="20220621 09:44:47.920"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:48.926" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:47.920" endtime="20220621 09:44:48.926"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//select[@id="jenis_kelamin"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:48.926" level="INFO">Clicking element '//select[@id="jenis_kelamin"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:48.926" endtime="20220621 09:44:48.997"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>//div[@class="datepicker-days"]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20220621 09:44:49.013" level="INFO">Element '//div[@class="datepicker-days"]' did not exist.</msg>
+<status status="PASS" starttime="20220621 09:44:48.997" endtime="20220621 09:44:49.013"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:50.015" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:49.013" endtime="20220621 09:44:50.015"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>//select[@id="jenis_kelamin"]</arg>
+<arg>Laki-laki</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220621 09:44:50.015" level="INFO">Selecting options from selection list '//select[@id="jenis_kelamin"]' by label Laki-laki.</msg>
+<status status="PASS" starttime="20220621 09:44:50.015" endtime="20220621 09:44:50.071"/>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<arg>//select[@id="jenis_kelamin"]</arg>
+<arg>Laki-laki</arg>
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<msg timestamp="20220621 09:44:50.072" level="INFO">Verifying list '//select[@id="jenis_kelamin"]' has option [ Laki-laki ] selected.</msg>
+<msg timestamp="20220621 09:44:50.081" level="INFO">Current page contains list '//select[@id="jenis_kelamin"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:50.071" endtime="20220621 09:44:50.135"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:51.142" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:50.135" endtime="20220621 09:44:51.142"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="telephone"]</arg>
+<arg>0987654</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:51.142" level="INFO">Typing text '0987654' into text field '//input[@id="telephone"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:51.142" endtime="20220621 09:44:51.250"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="telephone"]</arg>
+<arg>0987654</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:51.282" level="INFO">Content of text field '//input[@id="telephone"]' is '0987654'.</msg>
+<status status="PASS" starttime="20220621 09:44:51.250" endtime="20220621 09:44:51.282"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:52.296" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:51.282" endtime="20220621 09:44:52.296"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>//select[@id="pol_id"]</arg>
+<arg>Polda Jawa Tengah</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220621 09:44:52.299" level="INFO">Selecting options from selection list '//select[@id="pol_id"]' by label Polda Jawa Tengah.</msg>
+<status status="PASS" starttime="20220621 09:44:52.296" endtime="20220621 09:44:52.363"/>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<arg>//select[@id="pol_id"]</arg>
+<arg>Polda Jawa Tengah</arg>
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<msg timestamp="20220621 09:44:52.363" level="INFO">Verifying list '//select[@id="pol_id"]' has option [ Polda Jawa Tengah ] selected.</msg>
+<msg timestamp="20220621 09:44:52.379" level="INFO">Current page contains list '//select[@id="pol_id"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:52.363" endtime="20220621 09:44:52.777"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:53.781" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:52.777" endtime="20220621 09:44:53.781"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>cobalagi@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:53.781" level="INFO">Typing text 'cobalagi@gmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20220621 09:44:53.781" endtime="20220621 09:44:53.905"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="email"]</arg>
+<arg>cobalagi@gmail.com</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:53.937" level="INFO">Content of text field '//input[@id="email"]' is 'cobalagi@gmail.com'.</msg>
+<status status="PASS" starttime="20220621 09:44:53.905" endtime="20220621 09:44:53.937"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:54.952" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:53.937" endtime="20220621 09:44:54.952"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>11111111</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:54.956" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg timestamp="20220621 09:44:55.012" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220621 09:44:55.057" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220621 09:44:54.952" endtime="20220621 09:44:55.057"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="password"]</arg>
+<arg>11111111</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:55.089" level="INFO">Content of text field '//input[@id="password"]' is '11111111'.</msg>
+<status status="PASS" starttime="20220621 09:44:55.057" endtime="20220621 09:44:55.089"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:56.097" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:55.089" endtime="20220621 09:44:56.097"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@id="password-confirm"]</arg>
+<arg>11111111</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 09:44:56.101" level="INFO">Typing password into text field '//input[@id="password-confirm"]'.</msg>
+<msg timestamp="20220621 09:44:56.160" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220621 09:44:56.213" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220621 09:44:56.097" endtime="20220621 09:44:56.213"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>//input[@id="password-confirm"]</arg>
+<arg>11111111</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220621 09:44:56.247" level="INFO">Content of text field '//input[@id="password-confirm"]' is '11111111'.</msg>
+<status status="PASS" starttime="20220621 09:44:56.213" endtime="20220621 09:44:56.247"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:57.251" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220621 09:44:56.248" endtime="20220621 09:44:57.251"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220621 09:44:59.265" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220621 09:44:57.251" endtime="20220621 09:44:59.265"/>
+</kw>
+<status status="PASS" starttime="20220621 09:44:40.384" endtime="20220621 09:44:59.265"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220621 09:44:59.268" endtime="20220621 09:45:01.606"/>
+</kw>
+<status status="PASS" starttime="20220621 09:43:44.551" endtime="20220621 09:45:01.606"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="9" fail="0" skip="0" id="s1" name="testLogin">testLogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
